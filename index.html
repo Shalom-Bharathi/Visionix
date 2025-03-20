@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionix AI</title>
+</head>
+<body>
+    <script>
+        var vapiInstance = null;
+        const assistant = "c7815fe7-dde6-4da4-96c2-a800e5d41637"; // Substitute with your assistant ID
+        const apiKey = "dc6af4fa-68ea-4a5c-85fe-00b0c9c231b0"; // Substitute with your Public key from Vapi Dashboard.
+            const buttonConfig = {
+  position: "top", // "bottom" | "top" | "left" | "right" | "top-right" | "top-left" | "bottom-left" | "bottom-right"
+  offset: "300px", // decide how far the button should be from the edge
+  width: "200px", // min-width of the button
+  height: "200px", // height of the button
+};
+
+      
+        (function (d, t) {
+          var g = document.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+          g.src =
+            "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+          g.defer = true;
+          g.async = true;
+          s.parentNode.insertBefore(g, s);
+      
+          g.onload = function () {
+            vapiInstance = window.vapiSDK.run({
+              apiKey: apiKey, // mandatory
+              assistant: assistant, // mandatory
+              config: buttonConfig, // optional
+            });
+          };
+        })(document, "script");
+      
+      </script>
+      
+</body>
+</html>
